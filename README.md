@@ -9,5 +9,4 @@ A Unity project with all the stuff one might want when starting making a game:
 - waypoints
 - game state tracking
 
-
 and much more!
