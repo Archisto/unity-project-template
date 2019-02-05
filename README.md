@@ -5,4 +5,5 @@ A Unity project with all the stuff one might want when starting making a game:
 - persistence
 - localization
 - audio players   
+
 and much more!
