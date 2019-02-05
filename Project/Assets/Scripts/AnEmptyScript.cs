@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Atlanticide
+namespace GameProject
 {
     public class AnEmptyScript : MonoBehaviour
     {

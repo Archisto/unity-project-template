@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using UnityEngine;
 
-namespace Project.Persistence
+namespace GameProject.Persistence
 {
     /// <summary>
     /// Converts data to JSON for saving and loading it.

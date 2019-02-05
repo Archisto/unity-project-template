@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using L10n = Project.Localization.Localization;
+using L10n = GameProject.Localization.Localization;
 
-namespace Project.Localization
+namespace GameProject.Localization
 {
     public class LocalizedLabel : MonoBehaviour
     {

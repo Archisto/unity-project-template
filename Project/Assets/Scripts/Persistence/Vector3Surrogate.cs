@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using UnityEngine;
 
-namespace Project.Persistence
+namespace GameProject.Persistence
 {
     [Serializable]
     public class Vector3Surrogate : ISerializationSurrogate

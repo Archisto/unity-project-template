@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Project.UI;
-using Project.Persistence;
-using Project.Localization;
+using GameProject.UI;
+using GameProject.Persistence;
+using GameProject.Localization;
 
-using L10n = Project.Localization.Localization;
+using L10n = GameProject.Localization.Localization;
 
-namespace Project
+namespace GameProject
 {
     public class GameManager : MonoBehaviour
     {

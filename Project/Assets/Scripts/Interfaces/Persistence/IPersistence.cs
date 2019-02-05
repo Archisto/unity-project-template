@@ -1,4 +1,4 @@
-﻿namespace Project.Persistence
+﻿namespace GameProject.Persistence
 {
     public interface IPersistence
     {

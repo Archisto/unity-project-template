@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEditor;
-using Project.Localization;
-using L10n = Project.Localization.Localization;
+using GameProject.Localization;
+using L10n = GameProject.Localization.Localization;
 
 namespace KillerEstate.Editor
 {

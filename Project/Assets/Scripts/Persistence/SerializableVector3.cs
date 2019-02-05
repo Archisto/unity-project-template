@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Project.Persistence
+namespace GameProject.Persistence
 {
     [Serializable]
     public class SerializableVector3

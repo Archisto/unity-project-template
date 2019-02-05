@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Project.UI;
+using GameProject.UI;
 
-namespace Project
+namespace GameProject
 {
     public class LerpToCameraView : MonoBehaviour
     {

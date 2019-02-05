@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Project.UI
+namespace GameProject.UI
 {
     public class PauseMenu : Screen
     {

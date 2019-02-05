@@ -8,7 +8,7 @@ using UnityEngine;
 // this script but it's not necessary. Another Singleton object called
 // GameManager handles audio settings.
 
-namespace Project
+namespace GameProject
 {
     /// <summary>
     /// The sound effects' names

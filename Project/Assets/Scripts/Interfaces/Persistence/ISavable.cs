@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Project.Persistence
+namespace GameProject.Persistence
 {
     public interface ISavable
     {

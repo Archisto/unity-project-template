@@ -2,9 +2,9 @@
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
-using Project.Persistence;
+using GameProject.Persistence;
 
-namespace Project
+namespace GameProject
 {
     public static class Utils
     {

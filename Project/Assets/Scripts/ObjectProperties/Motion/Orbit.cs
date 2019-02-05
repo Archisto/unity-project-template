@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Project
+namespace GameProject
 {
     public class Orbit : MonoBehaviour
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Project.WaypointSystem
+namespace GameProject.WaypointSystem
 {
     public class Curve : MonoBehaviour
     {

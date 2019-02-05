@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Project
+namespace GameProject
 {
     public interface IDamageReceiver
     {

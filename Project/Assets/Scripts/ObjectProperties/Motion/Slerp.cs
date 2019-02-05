@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Project
+namespace GameProject
 {
     public class Slerp : MonoBehaviour
     {

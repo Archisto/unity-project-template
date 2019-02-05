@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Project.Localization;
+using GameProject.Localization;
 
-namespace Project.UI
+namespace GameProject.UI
 {
     public class HeadsUpDisplay : Screen
     {

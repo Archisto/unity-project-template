@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Project.Localization
+namespace GameProject.Localization
 {
     class LocalizationNotFoundException : FileNotFoundException
     {

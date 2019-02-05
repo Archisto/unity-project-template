@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Project.WaypointSystem;
+using GameProject.WaypointSystem;
 
-namespace Project
+namespace GameProject
 {
     public class FollowPath : Motion
     {

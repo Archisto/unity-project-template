@@ -3,7 +3,7 @@ using UnityEngine;
 using System;
 using Object = UnityEngine.Object;
 
-namespace Project
+namespace GameProject
 {
     public class Pool<T>
             where T : Component

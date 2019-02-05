@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Project.Localization
+namespace GameProject.Localization
 {
     /// <summary>
     /// Stores key and value pairs of a language.

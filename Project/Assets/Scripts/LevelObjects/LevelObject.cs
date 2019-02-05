@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Project
+namespace GameProject
 {
     /// <summary>
     /// A base class for all level objects. Controls their basic behaviour.

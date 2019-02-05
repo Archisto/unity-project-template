@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Project
+namespace GameProject
 {
     public class FadeToColor : MonoBehaviour
     {

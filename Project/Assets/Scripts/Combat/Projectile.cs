@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Project
+namespace GameProject
 {
     /// <summary>
     /// A projectile which deals damage to opposing units.
@@ -50,10 +50,10 @@ namespace Project
         private Rigidbody rBody;
 
         /// <summary>
-        /// The hole the projectile creates on collision
+        /// The hit mark the projectile creates on collision
         /// </summary>
         private HitMark hitMark;
-        private bool holeCreated;
+        private bool hitMarkCreated;
 
         /// <summary>
         /// Self-initializing property. Gets the reference to
@@ -90,7 +90,7 @@ namespace Project
         {
 
             Rigidbody.AddForce(direction.normalized * shootingForce, ForceMode.Impulse);
-            //holeCreated = false;
+            //hitMarkCreated = false;
         }
 
         /// <summary>
@@ -107,11 +107,11 @@ namespace Project
             // Passes collision information to the weapon
             PassCollisionInfoToWeapon(this);
 
-            // Creates a hole at the point of impact
-            //if (!holeCreated)
+            // Creates a hit mark at the point of impact
+            //if (!hitMarkCreated)
             //{
-            //    CreateHole(collision);
-            //    holeCreated = true;
+            //    CreateHitMark(collision);
+            //    hitMarkCreated = true;
             //}
         }
 
@@ -152,7 +152,7 @@ namespace Project
         }
 
         /// <summary>
-        /// Creates a hole at the point of collision.
+        /// Creates a hitMark at the point of collision.
         /// </summary>
         /// <param name="collision">Collision info</param>
         private void CreateHitMark(Collision collision)
@@ -171,10 +171,10 @@ namespace Project
                 //    }
                 //}
 
-                // TODO: Fix the hole's rotation
+                // TODO: Fix the hit mark's rotation
 
                 hitMark.transform.rotation = Quaternion.LookRotation(Vector3.forward, transform.position - point);
-                //hole.transform.rotation = Quaternion.LookRotation(Vector3.up, transform.position - point);
+                //hitMark.transform.rotation = Quaternion.LookRotation(Vector3.up, transform.position - point);
 
                 hitMark.gameObject.SetActive(true);
             }

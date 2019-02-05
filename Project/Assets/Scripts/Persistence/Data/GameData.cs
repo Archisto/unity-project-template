@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Project.Persistence
+namespace GameProject.Persistence
 {
     [Serializable]
     public class GameData : ISaveData

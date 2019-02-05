@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Project
+namespace GameProject
 {
     /// <summary>
     /// A unit's weapon for firing projectiles.
@@ -27,7 +27,7 @@ namespace Project
         private Transform shootingPoint;
 
         private Pool<Projectile> projectiles;
-        //public Pool<Hole> holes;
+        //public Pool<HitMark> hitMarks;
 
         private LevelObject owner;
         private ParticleSystem shootParticles;
@@ -50,7 +50,7 @@ namespace Project
             //    projectilePrefab, 4, false, item => InitItem(item));
 
             // FIXME
-            //holes = new Pool<Hole>(holePrefab, 8, true);
+            //hitMarks = new Pool<HitMark>(hitMarkPrefab, 8, true);
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Project
                 firingDirection.Normalize();
 
                 // FIXME
-                //projectile.SetHole(holes.GetPooledObject(false));
+                //projectile.SetHitMark(hitMarks.GetPooledObject(false));
 
                 projectile.transform.position = shootingPoint.position;
                 projectile.Launch(firingDirection);
