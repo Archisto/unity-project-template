@@ -33,6 +33,9 @@ namespace GameProject
         }
         #endregion Statics
 
+        private const string MainMenuKey = "MainMenu";
+        private const string LevelKey = "Level";
+
         public enum GameState
         {
             MainMenu = 0,
@@ -181,6 +184,15 @@ namespace GameProject
         private void Init()
         {
             State = GameState.MainMenu;
+            /*if (SceneManager.GetActiveScene().name.Equals(MainMenuKey))
+            {
+                State = GameState.MainMenu;
+            }
+            else
+            {
+                State = GameState.Map;
+            }*/
+
             Transition = SceneTransition.InScene;
 
             // Initializes the save system and loads data
@@ -210,7 +222,7 @@ namespace GameProject
         /// </summary>
         private void OnLanguageLoaded()
         {
-            // TODO: Update the UI if the player changed the language.
+            // TODO: Update the UI if the player changes the language.
         }
 
         private void InitScene()

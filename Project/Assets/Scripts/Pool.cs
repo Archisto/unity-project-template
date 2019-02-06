@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
-using System;
 using Object = UnityEngine.Object;
 
 namespace GameProject
@@ -23,7 +23,7 @@ namespace GameProject
 
         private Action<T> _initMethod;
 
-        public Pool( int poolSize, bool shouldGrow, T prefab )
+        public Pool(int poolSize, bool shouldGrow, T prefab)
         {
             _poolSize = poolSize;
             _shouldGrow = shouldGrow;
@@ -47,7 +47,7 @@ namespace GameProject
             int i = 0;
             while (i < _poolSize)
             {
-                foreach(T t in prefabArray)
+                foreach (T t in prefabArray)
                 {
                     _objectPrefab = t;
                     if (i < _poolSize)
@@ -59,12 +59,12 @@ namespace GameProject
             }
         }
 
-        public Pool( int poolSize, bool shouldGrow, T prefab, Action<T> initMethod )
+        public Pool(int poolSize, bool shouldGrow, T prefab, Action<T> initMethod)
             : this(poolSize, shouldGrow, prefab)
         {
             _initMethod = initMethod;
 
-            foreach(var item in _pool)
+            foreach (var item in _pool)
             {
                 _initMethod(item);
             }
@@ -75,12 +75,12 @@ namespace GameProject
         /// </summary>
         /// <param name="isActive">Should the object be active when it is added to the pool or not.</param>
         /// <returns>The object added to the pool.</returns>
-        private T AddObject( bool isActive = false )
+        private T AddObject(bool isActive = false)
         {
             // Instantiate pooled objects under this parent.
             T go = Object.Instantiate(_objectPrefab);
 
-            if(isActive)
+            if (isActive)
             {
                 Activate(go);
             }
@@ -98,14 +98,14 @@ namespace GameProject
         /// Called when the object is returned to the pool. Deactivates the object.
         /// </summary>
         /// <param name="component">Object to deactivate</param>
-        protected virtual void Deactivate( T component )
+        protected virtual void Deactivate(T component)
         {
             component.gameObject.SetActive(false);
         }
 
         public void DeactivateAllObjects()
         {
-            foreach(T component in _pool)
+            foreach (T component in _pool)
             {
                 LevelObject lo = component as LevelObject;
                 if (lo != null)
@@ -121,8 +121,14 @@ namespace GameProject
         /// Called when the object is fetched from the pool. Activates the object.
         /// </summary>
         /// <param name="component">Object to activate</param>
-        protected virtual void Activate( T component )
+        protected virtual void Activate(T component)
         {
+            LevelObject lo = component as LevelObject;
+            if (lo != null)
+            {
+                lo.ResetObject();
+            }
+
             component.gameObject.SetActive(true);
         }
 
@@ -133,9 +139,9 @@ namespace GameProject
         public T GetPooledObject()
         {
             T result = null;
-            for(int i = 0; i < _pool.Count; i++)
+            for (int i = 0; i < _pool.Count; i++)
             {
-                if(_pool[i].gameObject.activeSelf == false)
+                if (_pool[i].gameObject.activeSelf == false)
                 {
                     result = _pool[i];
                     break; // Jumps out from the loop.
@@ -144,13 +150,13 @@ namespace GameProject
 
             // If there were no inactive GameObjects in the pool and the pool should
             // grow, then let's add a new object to the pool.
-            if(result == null && _shouldGrow)
+            if (result == null && _shouldGrow)
             {
                 result = AddObject();
             }
 
             // If we found an incative object let's activate it.
-            if(result != null)
+            if (result != null)
             {
                 Activate(result);
             }
@@ -163,11 +169,11 @@ namespace GameProject
         /// </summary>
         /// <param name="component">The object which should be returned to the pool.</param>
         /// <returns>Could the object be returned back to the pool.</returns>
-        public bool ReturnObject( T component )
+        public bool ReturnObject(T component)
         {
             bool result = false;
 
-            foreach(var pooledObject in _pool)
+            foreach (var pooledObject in _pool)
             {
                 if(pooledObject == component)
                 {
@@ -177,7 +183,7 @@ namespace GameProject
                 }
             }
 
-            if(!result)
+            if (!result)
             {
                 Debug.LogError("Tried to return an object which doesn't belong to this pool!");
             }

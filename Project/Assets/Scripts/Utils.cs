@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Collections.Generic;
 using UnityEngine;
 using GameProject.Persistence;
@@ -334,6 +335,11 @@ namespace GameProject
             }
         }
 
+        public static bool Between(int value, int min, int max)
+        {
+            return value >= min && value <= max;
+        }
+
         public static bool Between(float value, float min, float max)
         {
             return value >= min && value <= max;
@@ -437,6 +443,24 @@ namespace GameProject
                 Gizmos.DrawSphere(position, 0.2f);
                 position.x += spacing;
             }
+        }
+
+        public static string GetPropertyName<T>(Expression<Func<T>> propertyLambda)
+        {
+            if (propertyLambda == null)
+            {
+                throw new ArgumentNullException("propertyLambda");
+            }
+
+            var memberExpression = propertyLambda.Body as MemberExpression;
+            if (memberExpression == null)
+            {
+                throw new ArgumentException
+                    ("You must pass a lambda of the form: " +
+                     "'() => Class.Property' or '() => object.Property'");
+            }
+
+            return memberExpression.Member.Name;
         }
 
         [Serializable]

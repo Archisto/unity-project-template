@@ -18,24 +18,14 @@ namespace GameProject.UI
             GameManager.Instance.LoadNewGame();
         }
 
-        public void OpenInstructions()
+        public void SetInstructionsActive(bool active)
         {
-            instructionsScreen.SetActive(true);
+            instructionsScreen.SetActive(active);
         }
 
-        public void CloseInstructions()
+        public void SetCreditsActive(bool active)
         {
-            instructionsScreen.SetActive(false);
-        }
-
-        public void OpenCredits()
-        {
-            creditsScreen.SetActive(true);
-        }
-
-        public void CloseCredits()
-        {
-            creditsScreen.SetActive(false);
+            creditsScreen.SetActive(active);
         }
 
         public void QuitGame()
